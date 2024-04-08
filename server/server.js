@@ -35,10 +35,4 @@ app.use('/', (req, res) => {
   res.send('<h1>Hello World</h1>');
 });
 
-//port
-const PORT = process.env.PORT || 8080;
-
-//run listen
-app.listen(PORT, () => {
-  console.log(`Server berjalan di mode ${process.env.DEV_MODE} pada port ${PORT}`.bgGreen.white);
-});
+app.listen(8080, console.log('server is running on port 8080'));
