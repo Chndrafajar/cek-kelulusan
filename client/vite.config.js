@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8080', // Ganti dengan URL API Anda
+        target: 'https://cek-kelulusan-api.vercel.app', // Ganti dengan URL API Anda
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api/v1'),
       },
