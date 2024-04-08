@@ -12,7 +12,7 @@ export default function PrivateRoutes() {
 
   useEffect(() => {
     const siswaCheck = async () => {
-      const res = await axios.get('/api/siswa/siswa-auth');
+      const res = await axios.get('https://cek-kelulusan-api.vercel.app/api/v1/siswa/siswa-auth');
       if (res.data.ok) {
         setOk(true);
       } else {
