@@ -31,7 +31,7 @@ app.use('/api/v1/siswa', siswaRoutes);
 app.use('/api/v1/jurusan', jurusanRoutes);
 app.use('/api/v1/kelas', kelasRoutes);
 
-app.get('/', (req, res) => {
+app.use('/', (req, res) => {
   res.send('<h1>Hello World</h1>');
 });
 
