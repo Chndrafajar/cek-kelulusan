@@ -32,7 +32,7 @@ export default function EditJurusan() {
   const handleUpdateJurusan = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`/api/v1/jurusan/update/${id}`, {
+      const res = await axios.put(`https://cek-kelulusan-api.vercel.app/api/v1/jurusan/update/${id}`, {
         name,
       });
       if (res && res.data.success) {
@@ -48,7 +48,7 @@ export default function EditJurusan() {
 
   const handleDeleteJurusan = async (e) => {
     try {
-      const res = await axios.delete(`/api/v1/jurusan/delete/${id}`);
+      const res = await axios.delete(`https://cek-kelulusan-api.vercel.app/api/v1/jurusan/delete/${id}`);
       if (res && res.data.success) {
         navigate('/dashboard/data-jurusan');
         swal('Good Job!', res.data.message, 'success');

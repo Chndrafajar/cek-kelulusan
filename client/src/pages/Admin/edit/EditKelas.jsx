@@ -32,7 +32,7 @@ export default function EditKelas() {
   const handleUpdateKelas = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`/api/kelas/update/${id}`, {
+      const res = await axios.put(`https://cek-kelulusan-api.vercel.app/api/v1/kelas/update/${id}`, {
         name,
       });
       if (res && res.data.success) {
@@ -48,7 +48,7 @@ export default function EditKelas() {
 
   const handleDeleteKelas = async (e) => {
     try {
-      const res = await axios.delete(`/api/kelas/delete/${id}`);
+      const res = await axios.delete(`https://cek-kelulusan-api.vercel.app/api/v1/kelas/delete/${id}`);
       if (res && res.data.success) {
         navigate('/dashboard/data-kelas');
         swal('Good Job!', res.data.message, 'success');
