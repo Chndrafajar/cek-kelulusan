@@ -11,7 +11,7 @@ export default function Dashboard() {
 
   const getAllDataSiswa = async () => {
     try {
-      const { data } = await axios.get('/api/v1/siswa/get-data');
+      const { data } = await axios.get('https://cek-kelulusan-api.vercel.app/api/v1/siswa/get-data');
       setSiswa(data);
     } catch (error) {
       console.log(error);

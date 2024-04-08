@@ -29,7 +29,7 @@ export default function EditSiswa() {
 
   const getSingleDataSiswa = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/siswa/get/${params.sid}`);
+      const { data } = await axios.get(`https://cek-kelulusan-api.vercel.app/api/v1/siswa/get/${params.sid}`);
       setId(data.siswa._id);
       setNama(data.siswa.nama);
       setNis(data.siswa.nis);

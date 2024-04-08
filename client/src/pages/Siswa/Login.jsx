@@ -18,7 +18,7 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('/api/v1/siswa/login', {
+      const res = await axios.post('https://cek-kelulusan-api.vercel.app/api/v1/siswa/login', {
         nis,
       });
       if (res && res.data.success) {

@@ -17,7 +17,7 @@ export default function AddJurusan() {
   const handleSubmitSiswa = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/v1/jurusan/create', {
+      const res = await axios.post('https://cek-kelulusan-api.vercel.app/api/v1/jurusan/create', {
         name,
       });
       if (res && res.data.success) {

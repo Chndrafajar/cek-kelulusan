@@ -15,7 +15,7 @@ export default function EditJurusan() {
 
   const getSingleDataJurusan = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/jurusan/get/${params.jid}`);
+      const { data } = await axios.get(`https://cek-kelulusan-api.vercel.app/api/v1/jurusan/get/${params.jid}`);
       setId(data.jurusan._id);
       setName(data.jurusan.name);
     } catch (error) {

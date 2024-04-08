@@ -15,7 +15,7 @@ export default function AddKelas() {
   const handleSubmitSiswa = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/v1/kelas/create', {
+      const res = await axios.post('https://cek-kelulusan-api.vercel.app/api/v1/kelas/create', {
         name,
       });
       if (res && res.data.success) {

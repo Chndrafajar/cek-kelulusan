@@ -34,7 +34,7 @@ export default function DataSiswa() {
     setLoading(true);
 
     try {
-      const response = await axios.get(`/api/v1/siswa/search/${keyword}`);
+      const response = await axios.get(`https://cek-kelulusan-api.vercel.app/api/v1/siswa/search/${keyword}`);
       setSearchResult(response.data);
       setLoading(false);
     } catch (error) {
@@ -45,7 +45,7 @@ export default function DataSiswa() {
 
   const getAllDataSiswa = async () => {
     try {
-      const { data } = await axios.get('/api/v1/siswa/get-data');
+      const { data } = await axios.get('https://cek-kelulusan-api.vercel.app/api/v1/siswa/get-data');
       setSiswa(data);
     } catch (error) {
       console.log(error);
@@ -56,7 +56,7 @@ export default function DataSiswa() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/v1/siswa/get-kelas/${selectKelas}`);
+        const response = await axios.get(`https://cek-kelulusan-api.vercel.app/api/v1/siswa/get-kelas/${selectKelas}`);
         setSiswaKelas(response.data.siswa); // Mengambil data siswa dari respons API
       } catch (error) {
         console.error('Error fetching siswa data:', error);
@@ -72,7 +72,7 @@ export default function DataSiswa() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/v1/siswa/get-jurusan/${selectJurusan}`);
+        const response = await axios.get(`https://cek-kelulusan-api.vercel.app/api/v1/siswa/get-jurusan/${selectJurusan}`);
         setSiswaJurusan(response.data.siswa); // Mengambil data siswa dari respons API
       } catch (error) {
         console.error('Error fetching siswa data:', error);
@@ -103,7 +103,7 @@ export default function DataSiswa() {
   //get jurusan
   const getAllDataJurusan = async () => {
     try {
-      const { data } = await axios.get('/api/v1/jurusan/get-jurusan');
+      const { data } = await axios.get('https://cek-kelulusan-api.vercel.app/api/v1/jurusan/get-jurusan');
       if (data?.success) {
         setJurusanSelect(data?.jurusan);
       }
@@ -115,7 +115,7 @@ export default function DataSiswa() {
   // get kelas
   const getAllDataKelas = async () => {
     try {
-      const { data } = await axios.get('/api/v1/kelas/get-kelas');
+      const { data } = await axios.get('https://cek-kelulusan-api.vercel.app/api/v1/kelas/get-kelas');
       if (data?.success) {
         setKelasSelect(data?.kelas);
       }
