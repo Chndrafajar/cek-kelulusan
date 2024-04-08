@@ -13,7 +13,7 @@ export default function DataJurusan() {
 
   const getAllDataJurusan = async () => {
     try {
-      const { data } = await axios.get('/api/jurusan/get-jurusan');
+      const { data } = await axios.get('/api/v1/jurusan/get-jurusan');
       if (data?.success) {
         setJurusan(data?.jurusan);
       }

@@ -29,7 +29,7 @@ export default function AddSiswa() {
   const handleSubmitSiswa = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/siswa/tambah', {
+      const res = await axios.post('/api/v1/siswa/tambah', {
         nama,
         nis,
         status,
@@ -54,7 +54,7 @@ export default function AddSiswa() {
   //get jurusan
   const getAllDataJurusan = async () => {
     try {
-      const { data } = await axios.get('/api/jurusan/get-jurusan');
+      const { data } = await axios.get('/api/v1/jurusan/get-jurusan');
       if (data?.success) {
         setJurusanSelect(data?.jurusan);
       }
@@ -66,7 +66,7 @@ export default function AddSiswa() {
   // get kelas
   const getAllDataKelas = async () => {
     try {
-      const { data } = await axios.get('/api/kelas/get-kelas');
+      const { data } = await axios.get('/api/v1/kelas/get-kelas');
       if (data?.success) {
         setKelasSelect(data?.kelas);
       }

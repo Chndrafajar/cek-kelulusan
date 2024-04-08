@@ -15,7 +15,7 @@ export default function AddKelas() {
   const handleSubmitSiswa = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/kelas/create', {
+      const res = await axios.post('/api/v1/kelas/create', {
         name,
       });
       if (res && res.data.success) {

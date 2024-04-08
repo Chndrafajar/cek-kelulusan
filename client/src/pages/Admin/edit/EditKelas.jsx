@@ -15,7 +15,7 @@ export default function EditKelas() {
 
   const getSingleDataKelas = async () => {
     try {
-      const { data } = await axios.get(`/api/kelas/get/${params.kid}`);
+      const { data } = await axios.get(`/api/v1/kelas/get/${params.kid}`);
       setId(data.kelas._id);
       setName(data.kelas.name);
     } catch (error) {

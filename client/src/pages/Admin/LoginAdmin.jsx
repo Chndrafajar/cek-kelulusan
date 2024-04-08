@@ -20,7 +20,7 @@ export default function LoginAdmin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/admin/login', {
+      const res = await axios.post('/api/v1/admin/login', {
         username,
         password,
       });

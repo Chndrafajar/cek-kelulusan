@@ -29,7 +29,7 @@ export default function EditSiswa() {
 
   const getSingleDataSiswa = async () => {
     try {
-      const { data } = await axios.get(`/api/siswa/get/${params.sid}`);
+      const { data } = await axios.get(`/api/v1/siswa/get/${params.sid}`);
       setId(data.siswa._id);
       setNama(data.siswa.nama);
       setNis(data.siswa.nis);
@@ -53,7 +53,7 @@ export default function EditSiswa() {
   const handleUpdateSiswa = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`/api/siswa/update/${id}`, {
+      const res = await axios.put(`/api/v1/siswa/update/${id}`, {
         nama,
         nis,
         status,
@@ -76,7 +76,7 @@ export default function EditSiswa() {
 
   const handleDeleteSiswa = async (e) => {
     try {
-      const res = await axios.delete(`/api/siswa/delete/${id}`);
+      const res = await axios.delete(`/api/v1/siswa/delete/${id}`);
       if (res && res.data.success) {
         navigate('/dashboard/data-siswa');
         swal('Good Job!', res.data.message, 'success');
@@ -91,7 +91,7 @@ export default function EditSiswa() {
   //get jurusan
   const getAllDataJurusan = async () => {
     try {
-      const { data } = await axios.get('/api/jurusan/get-jurusan');
+      const { data } = await axios.get('/api/v1/jurusan/get-jurusan');
       if (data?.success) {
         setJurusanSelect(data?.jurusan);
       }
@@ -103,7 +103,7 @@ export default function EditSiswa() {
   // get kelas
   const getAllDataKelas = async () => {
     try {
-      const { data } = await axios.get('/api/kelas/get-kelas');
+      const { data } = await axios.get('/api/v1/kelas/get-kelas');
       if (data?.success) {
         setKelasSelect(data?.kelas);
       }

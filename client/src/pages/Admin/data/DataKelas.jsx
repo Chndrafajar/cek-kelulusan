@@ -12,7 +12,7 @@ export default function DataKelas() {
 
   const getAllDataKelas = async () => {
     try {
-      const { data } = await axios.get('/api/kelas/get-kelas');
+      const { data } = await axios.get('/api/v1/kelas/get-kelas');
       if (data?.success) {
         setKelas(data?.kelas);
       }
