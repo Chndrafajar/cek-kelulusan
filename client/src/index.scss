@@ -199,7 +199,7 @@
         display: flex;
         gap: 150px;
         .detail-row-item {
-          min-width: 160px;
+          min-width: 150px;
           width: 100%;
 
           span {
@@ -445,6 +445,8 @@
     }
   }
   .kelulusan .card .detail-kelulusan .detail-row {
+    min-width: 160px;
+    width: 100%;
     flex-direction: column;
     gap: 10px;
     .detail-row-item {
