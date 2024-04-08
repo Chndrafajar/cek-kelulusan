@@ -31,8 +31,14 @@ app.use('/api/v1/siswa', siswaRoutes);
 app.use('/api/v1/jurusan', jurusanRoutes);
 app.use('/api/v1/kelas', kelasRoutes);
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('<h1>Hello World</h1>');
 });
 
-app.listen(8080, console.log('server is running on port 8080'));
+//port
+const PORT = process.env.PORT || 8080;
+
+//run listen
+app.listen(PORT, () => {
+  console.log(`Server berjalan di mode ${process.env.DEV_MODE} pada port ${PORT}`.bgGreen.white);
+});
